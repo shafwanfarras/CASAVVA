@@ -199,7 +199,12 @@ showQ();
 // Database bersama (Firebase Realtime Database) agar angka sama di semua perangkat
 let votesRef = null;
 try {
-  firebase.initializeApp({ databaseURL: 'https://casavva-project-default-rtdb.asia-southeast1.firebasedatabase.app' });
+  firebase.initializeApp({
+    apiKey: 'AIzaSyBDQj9Nytqa_9Jse3rgmCWFZKVJd6sdkb8', // dari Firebase: Project settings > General > Your apps > Web app
+    authDomain: 'casavva-project.firebaseapp.com',
+    projectId: 'casavva-project',
+    databaseURL: 'https://casavva-project-default-rtdb.asia-southeast1.firebasedatabase.app',
+  });
   votesRef = firebase.database().ref('votes');
 } catch (e) {
   console.warn('Firebase tidak tersedia', e);
@@ -258,27 +263,67 @@ if (votesRef)
   });
 
 /* ===== Admin: buka dengan menambah #admin di alamat web ===== */
-if (location.hash === '#admin' && votesRef) {
-  $('#adm').hidden = false;
-  const auth = firebase.auth();
+let admReady = false;
+function initAdmin() {
+  if (!/admin/i.test(location.hash)) return;
+  const box = $('#admin');
+  box.hidden = false;
+  setTimeout(() => box.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+  const msg = $('#admMsg');
+  if (!votesRef || typeof firebase === 'undefined' || !firebase.auth) {
+    msg.textContent = 'Firebase belum termuat. Pastikan internet aktif dan script Firebase (app, database, auth) ada di index.html.';
+    return;
+  }
+  if (admReady) return;
+  admReady = true;
+  let auth;
+  try {
+    auth = firebase.auth();
+  } catch (e) {
+    msg.textContent = 'Auth error: ' + (e.code || e.message) + ' (cek apiKey di script.js)';
+    return;
+  }
+  if (firebase.app().options.apiKey === 'AIzaSyBDQj9Nytqa_9Jse3rgmCWFZKVJd6sdkb8') {
+    msg.textContent = 'apiKey belum diisi di script.js.';
+    return;
+  }
   auth.onAuthStateChanged((u) => {
     $('#admLogin').hidden = !!u;
     $('#admTools').hidden = !u;
+    msg.textContent = u ? 'Login sebagai ' + u.email : '';
   });
-  $('#admIn').onclick = () => auth.signInWithEmailAndPassword($('#admEmail').value, $('#admPass').value).catch(() => alert('Login gagal'));
+  const doLogin = () => {
+    msg.textContent = 'Memproses login...';
+    auth.signInWithEmailAndPassword($('#admEmail').value.trim(), $('#admPass').value).catch((e) => {
+      msg.textContent = 'Login gagal: ' + (e.code || e.message);
+    });
+  };
+  $('#admIn').onclick = doLogin;
+  $('#admPass').onkeydown = (e) => {
+    if (e.key === 'Enter') doLogin();
+  };
   $('#admOut').onclick = () => auth.signOut();
+  const deny = () => {
+    msg.textContent = 'Ditolak server: akun ini bukan admin (cek UID di Rules).';
+  };
   const dec = (k) =>
     votesRef.child(k).transaction(
       (n) => Math.max(0, (n || 0) - 1),
       (err) => {
-        if (err) alert('Ditolak server: bukan admin');
+        if (err) deny();
       },
     );
   $('#admC').onclick = () => dec('c');
   $('#admR').onclick = () => dec('r');
   $('#admX').onclick = () => {
-    if (confirm('Reset semua vote menjadi 0?')) votesRef.set({ c: 0, r: 0 }).catch(() => alert('Ditolak server: bukan admin'));
+    if (confirm('Reset semua vote menjadi 0?')) votesRef.set({ c: 0, r: 0 }).catch(deny);
   };
+}
+try {
+  initAdmin();
+  addEventListener('hashchange', initAdmin);
+} catch (e) {
+  console.error('Admin error', e);
 }
 vUp();
 gi();
