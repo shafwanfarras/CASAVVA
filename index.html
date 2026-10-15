@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cassava: The Smart & Tasty Functional Food</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="cas" viewBox="0 0 100 130"><path d="M50 6C74 4 92 40 86 80c-4 28-18 46-36 46S14 106 12 78C8 40 28 8 50 6Z" fill="#f4a98b" stroke="#c9775a" stroke-width="3"/><path d="M50 6c-6 30-4 70 4 120" fill="none" stroke="#e58f6f" stroke-width="2" opacity=".6"/><circle cx="36" cy="58" r="5" fill="#4a2b20"/><circle cx="64" cy="58" r="5" fill="#4a2b20"/><circle cx="28" cy="70" r="6" fill="#ff8f8f" opacity=".6"/><circle cx="72" cy="70" r="6" fill="#ff8f8f" opacity=".6"/><path d="M40 72q10 12 20 0" fill="none" stroke="#4a2b20" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="rice" viewBox="0 0 100 130"><path d="M50 8c-10 14-14 28-6 44 6-12 8-30 6-44Zm0 0c10 14 14 28 6 44-6-12-8-30-6-44Z" fill="#f3d27a" stroke="#c9a23a" stroke-width="2"/><path d="M50 40c-18 8-24 30-14 52 4 10 10 20 14 32 4-12 10-22 14-32 10-22 4-44-14-52Z" fill="#fbe9a8" stroke="#c9a23a" stroke-width="3"/><circle cx="40" cy="80" r="4" fill="#4a2b20"/><circle cx="60" cy="80" r="4" fill="#4a2b20"/><path d="M44 92q6 8 12 0" fill="none" stroke="#4a2b20" stroke-width="3" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<nav aria-label="Navigation"><a href="#tesis">1. Thesis</a><a href="#maskot">Mascot</a><a href="#argumen">2. Arguments</a><a href="#karbo">Carbs</a><a href="#game">Game</a><a href="#kuis">Quiz</a><a href="#ringkas">3. Summary</a></nav>
+
+<header>
+  <button class="hero-btn" id="heroBtn" aria-label="Change mascot pose"><img class="hero-mascot" data-mk data-pose="santai" width="150" height="212" alt=""></button>
+  <div class="banner"><h1><b>CASSAVA:</b> The Smart & Tasty Functional Food for a Healthy You!</h1></div>
+</header>
+
+<main>
+<section id="tesis">
+  <div class="tag"><h2>1. Our Thesis</h2><small>What we believe</small></div>
+  <div class="row">
+    <img class="side-img bob" data-mk width="140" height="198" alt="">
+    <div class="card">Cassava is the ideal <b>non-rice staple</b> and functional food. Diversifying staple foods improves health, especially for people with diabetes (low GI), and <b>boosts the economy</b>.</div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Slide to see: Cassava vs Rice</h3>
+    <div style="display:flex;justify-content:space-around;align-items:end;margin:10px 0">
+      <svg id="s1" viewBox="0 0 100 130" width="90"><use href="#cas"/></svg>
+      <b style="font:800 28px 'Baloo 2'">VS</b>
+      <svg id="s2" viewBox="0 0 100 130" width="90"><use href="#rice"/></svg>
+    </div>
+    <input id="vs" type="range" min="0" max="100" value="0" aria-label="Slide to compare cassava and rice">
+    <p class="note">Qualitative illustration (not research data).</p>
+    <div>Dietary fibre <div class="bar g"><i id="bf1"></i></div>Glycaemic index <div class="bar"><i id="bg1"></i></div></div>
+    <p id="vsTxt" style="margin:0;font-weight:700"></p>
+  </div>
+</section>
+
+<section id="maskot">
+  <div class="tag"><h2>Meet the Mascot</h2><small>Choose a pose and a style!</small></div>
+  <div class="mk-wrap">
+    <div class="stage-area">
+      <div class="stage-flip" id="stageFlip">
+        <div class="stage-in" id="stageIn" data-pose="santai">
+          <img id="mkImg" data-mk width="540" height="763" alt="">
+          <!-- Aksesori digambar di atas maskot. Koordinat mengikuti gambar asli (viewBox 220 60 810 1145). -->
+          <svg id="acc" viewBox="220 60 810 1145" aria-hidden="true">
+            <g id="a-mahkota" hidden>
+              <g transform="rotate(17 725 140)"><path d="M640 145 L640 72 L683 108 L725 55 L767 108 L810 72 L810 145 Z" fill="#f2c94c" stroke="#8a5d1e" stroke-width="7" stroke-linejoin="round"/>
+              <circle cx="683" cy="122" r="9" fill="#e5533d"/><circle cx="725" cy="122" r="9" fill="#3da5e5"/><circle cx="767" cy="122" r="9" fill="#e5533d"/></g>
+            </g>
+            <g id="a-caping" hidden>
+              <g transform="translate(0 52) rotate(12 725 165)"><path d="M530 170 L725 18 L920 170 Q725 232 530 170 Z" fill="#ecca7d" stroke="#8a6a2a" stroke-width="7" stroke-linejoin="round"/>
+              <g stroke="#b88f3e" stroke-width="4" fill="none"><path d="M725 18 L640 190"/><path d="M725 18 L725 205"/><path d="M725 18 L810 190"/><path d="M590 128 Q725 168 860 128"/><path d="M640 78 Q725 108 810 78"/></g></g>
+            </g>
+            <g id="a-kacamata" hidden>
+              <g transform="rotate(-12 658 490)"><rect x="502" y="438" width="136" height="106" rx="30" fill="#141414" stroke="#000" stroke-width="5"/><rect x="678" y="438" width="136" height="106" rx="30" fill="#141414" stroke="#000" stroke-width="5"/>
+              <path d="M636 470 Q658 452 680 470" fill="none" stroke="#141414" stroke-width="12" stroke-linecap="round"/>
+              <path d="M504 462 L470 452 M812 462 L846 452" stroke="#141414" stroke-width="10" stroke-linecap="round"/>
+              <path d="M525 470 L560 452 M701 470 L736 452" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".5"/></g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="shadow" aria-hidden="true"></div>
+    </div>
+    <div>
+      <div class="bubble" id="mkSay" aria-live="polite">Hi! I'm the cassava mascot. Pick my pose and style!</div>
+      <p class="note" style="margin:14px 0 4px"><b>Pose:</b></p>
+      <div class="chips" id="poseChips"></div>
+      <p class="note" style="margin:14px 0 4px"><b>Style:</b></p>
+      <div class="chips" id="gayaChips"></div>
+      <div class="chips" style="margin-top:14px"><button class="btn" id="mkFact">Cassava facts 🍠</button><button class="chip" id="mkFlip" aria-pressed="false">↔ Flip</button><button class="chip" id="mkRand">🎲 Random</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="argumen">
+  <div class="tag"><h2>2. Arguments</h2><small>Why it's true</small></div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="pa">A. Low GI</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="pb">B. High Fibre</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="pc">C. Economy & Menu</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="pd">D. Benefits</button>
+  </div>
+
+  <div class="card panel" id="pa" role="tabpanel">
+    <h3>Good for people with diabetes</h3>
+    <div class="big" id="giN">0</div>
+    <div class="gauge"><span class="pin" id="pin">🍠</span></div>
+    <div class="lbl"><span>0</span><span>Low ≤55</span><span>Medium 56–69</span><span>High ≥70</span></div>
+    <p>The glycaemic index (GI) of cassava on our poster is <b>56</b>: blood sugar rises more gradually than with high-GI foods.</p>
+    <button class="btn" id="giB">Measure again</button>
+    <p class="note">Note: a GI of 56 sits at the upper edge of the low category. It depends on preparation and portion size.</p>
+  </div>
+
+  <div class="card panel" id="pb" role="tabpanel" hidden>
+    <h3>Happy digestion</h3>
+    <div class="big"><span id="fibN">0</span>%</div>
+    <div class="bar y"><i id="fib"></i></div>
+    <p>Dietary fibre content of cassava on our poster: <b>4.72%</b>. Fibre keeps you full longer and supports digestion.</p>
+    <label>Portion: <b id="pv">100</b> g<input id="por" type="range" min="50" max="300" step="10" value="100"></label>
+    <p>Estimated fibre in this portion: <b id="gr">4.7</b> g</p>
+  </div>
+
+  <div class="card panel" id="pc" role="tabpanel" hidden>
+    <h3>Profitable for farmers, creative in the kitchen</h3>
+    <label>Farm capital (Rp): <input id="mod" type="number" min="0" step="100000" value="1000000"></label>
+    <p>With an R/C of <b>1.66</b>, revenue ≈ <b id="rev"></b>, profit ≈ <b id="pro"></b>.</p>
+    <p class="note">R/C = revenue ÷ cost. Above 1 means the farm is profitable.</p>
+    <hr style="border:0;border-top:2px dashed var(--line)">
+    <p style="margin:6px 0"><b>Cassava menu ideas</b> (pick one):</p>
+    <div class="chips" id="menus"></div>
+    <div class="card" id="mdet" style="margin-top:12px;background:var(--paper)" aria-live="polite"></div>
+  </div>
+
+  <div class="card panel" id="pd" role="tabpanel" hidden>
+    <h3>Benefits of eating cassava</h3>
+    <div id="ben"></div>
+    <div class="card" style="margin-top:12px;background:#f6c3b8;color:#5a1f12;border-color:#e0806b">
+      <b>Important:</b> raw cassava contains natural cyanide compounds. Peel it and cook it thoroughly (boil, steam, or bake). Never eat it raw.
+    </div>
+    <p class="note">These benefits are general and depend on portion size and preparation. Not a substitute for advice from a doctor or dietitian.</p>
+  </div>
+</section>
+
+<section id="karbo">
+  <div class="tag"><h2>Carbohydrate Calculator</h2><small>By weight in grams</small></div>
+  <div class="card">
+    <label>Cassava weight: <b id="kg">150</b> g
+      <input id="kgr" type="range" min="10" max="500" step="5" value="150" aria-label="Cassava weight in grams"></label>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:10px 0">
+      <label>Or type: <input id="kin" type="number" min="0" max="5000" value="150"> g</label>
+      <label>Preparation:
+        <select id="kform" style="padding:8px;border-radius:10px;border:2px solid var(--line);background:var(--paper);color:var(--ink);font:700 16px Nunito">
+          <option value="38.1">Raw (38.1 g/100 g)</option>
+          <option value="40.1">Boiled (40.1 g/100 g)</option>
+        </select></label>
+    </div>
+    <div class="chips" id="kchips" aria-label="Quick portions">
+      <button class="chip" data-g="50">1 small piece · 50 g</button>
+      <button class="chip" data-g="100">1 small serving · 100 g</button>
+      <button class="chip" data-g="150">1 serving · 150 g</button>
+      <button class="chip" data-g="250">1 large serving · 250 g</button>
+    </div>
+    <div style="margin-top:14px"><span class="big" id="kres">0</span> <b>g carbohydrate</b>
+      <div class="bar"><i id="kbar"></i></div>
+      <p style="margin:0">Equals ≈ <b id="kkal">0</b> kcal from carbohydrates (1 g = 4 kcal).</p>
+    </div>
+    <p class="note">Per-100 g values are based on USDA nutrition data for cassava. Actual content varies by variety and preparation. The bar shows the portion relative to 500 g. This is not medical advice; people with diabetes should adjust portions with a dietitian.</p>
+  </div>
+</section>
+
+<section id="game">
+  <div class="tag"><h2>Cassava Game</h2><small>Learn while you play</small></div>
+  <div class="card">
+    <!-- Isi diatur dari script.js (GAME_URL). Tidak perlu mengubah bagian ini. -->
+    <div id="gameBox" class="game-box"></div>
+    <p style="text-align:center;margin:12px 0 0"><a id="gameOpen" class="btn" target="_blank" rel="noopener" hidden>Open game in a new tab</a></p>
+  </div>
+</section>
+
+<section id="kuis">
+  <div class="tag"><h2>Test Your Knowledge</h2><small>3 quick questions</small></div>
+  <div class="card" id="q"></div>
+</section>
+
+<section id="ringkas">
+  <div class="tag"><h2>3. Conclusion</h2><small>Summary</small></div>
+  <div class="row">
+    <div style="display:flex;align-items:flex-end;gap:6px"><img class="side-img close-img bob" data-mk width="100" height="141" alt=""><svg viewBox="0 0 100 130" width="90" class="bob" style="animation-delay:.4s"><use href="#rice"/></svg></div>
+    <div class="bubble">Make cassava your choice! It's nutritious, delicious, and better for farmers and for you. Choose functional, choose cassava!</div>
+  </div>
+  <div class="card" style="margin-top:18px;text-align:center">
+    <h3>Which do you choose?</h3>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:12px 0">
+      <button class="btn" id="vC">I choose cassava 🍠</button>
+      <button class="btn" id="vR" style="background:var(--gold);color:#4a2b20">I choose rice 🍚</button>
+    </div>
+    <div class="lbl" style="font-size:15px"><span>Cassava: <b id="nC">0</b> (<span id="pC">0</span>%)</span><span>Rice: <b id="nR">0</b> (<span id="pR">0</span>%)</span></div>
+    <div class="bar" style="display:flex;background:var(--gold);height:26px;margin-top:6px"><i id="bC" style="width:50%"></i></div>
+    <p id="cnt" class="note" style="margin:0">No votes yet. Be the first!</p>
+  </div>
+  <div id="adm" class="card" style="margin-top:18px;text-align:center" hidden>
+    <h3>Admin</h3>
+    <div id="admLogin" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <input id="admEmail" type="email" placeholder="Email admin" autocomplete="username" style="padding:8px 10px;border-radius:10px;border:1px solid #ccc">
+      <input id="admPass" type="password" placeholder="Password" autocomplete="current-password" style="padding:8px 10px;border-radius:10px;border:1px solid #ccc">
+      <button class="btn" id="admIn">Login</button>
+    </div>
+    <div id="admTools" hidden>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:8px 0">
+        <button class="chip" id="admC">Cassava −1</button>
+        <button class="chip" id="admR">Rice −1</button>
+        <button class="chip" id="admX">Reset votes</button>
+        <button class="chip" id="admOut">Logout</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
