@@ -6,7 +6,7 @@
    Tempel link game kalian di antara tanda kutip.
    Contoh: const GAME_URL = "https://username.github.io/game-singkong/";
    Biarkan kosong ("") untuk menampilkan kotak "segera hadir". */
-const GAME_URL = "";
+const GAME_URL = "https://game-casavva-1.vercel.app/";
 
 /* ===== PENGATURAN MASKOT (ubah di sini) =====
    Gambar maskot: folder img/. Pose = animasi (lihat style.css bagian 7).
